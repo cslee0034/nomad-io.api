@@ -47,8 +47,6 @@ export class AuthController {
   @Post('local/sign-up')
   @ApiOperation({
     summary: 'Sign up a user',
-    description:
-      'This endpoint is used to sign up a user with email and password in local provider.',
   })
   @ApiCreatedResponse({
     description: 'The user has been successfully created and cookie is set.',
@@ -86,8 +84,6 @@ export class AuthController {
   @Post('local/sign-in')
   @ApiOperation({
     summary: 'Sign in a user',
-    description:
-      'This endpoint is used to sign in a user with email and password.',
   })
   @ApiOkResponse({
     description: 'The user has been successfully signed in and cookie is set.',
@@ -132,8 +128,6 @@ export class AuthController {
   @UseGuards(GoogleAuthGuard)
   @ApiOperation({
     summary: 'Google OAuth2 login',
-    description:
-      'This endpoint is used to authenticate a user with Google OAuth2.',
   })
   @ApiOkResponse({
     description: 'User will be redirected to Google OAuth2 login page.',
@@ -148,8 +142,6 @@ export class AuthController {
   @Get('google/redirect')
   @ApiOperation({
     summary: 'Google OAuth2 redirect',
-    description:
-      'This endpoint is used to redirect the user after Google OAuth2 authentication.',
   })
   @ApiOkResponse({
     description: 'User will be redirected to {client-url}/api/google',
@@ -191,8 +183,6 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
     summary: 'Logout a user',
-    description:
-      "This endpoint requires an 'x-access-token' cookie for authentication.",
   })
   @ApiOkResponse({
     description: 'The user has been successfully logged out.',
@@ -212,8 +202,6 @@ export class AuthController {
   @Post('refresh')
   @ApiOperation({
     summary: 'Refresh tokens',
-    description:
-      "This endpoint requires an 'x-refresh-token' cookie for token rotation.",
   })
   @ApiHeader({
     name: 'x-refresh-token',
