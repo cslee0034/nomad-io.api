@@ -27,6 +27,7 @@ import { AppService } from './app.service';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './common/guard/role.guard';
 import { LoggerModule } from './common/module/logger.module';
+import { PostsModule } from './modules/posts/module/posts.module';
 
 @Module({
   imports: [
@@ -67,6 +68,7 @@ import { LoggerModule } from './common/module/logger.module';
     EncryptModule,
     ProducerModule,
     UsersModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [
